@@ -1,0 +1,52 @@
+databaseChangeLog:
+- changeSet:
+      id: 1
+      author: teruo
+      changes:
+      - createTable:
+            tableName: banner
+            columns:
+            - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                      primaryKey: true
+            - column:
+                  name: position
+                  type: int
+                  remarks: "排序字段"
+                  constraints:
+                      nullable: false
+            - column:
+                  name: link
+                  type: varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+                  remarks: "跳转链接"
+            - column:
+                  name: photo
+                  type: varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+                  remarks: "图片url"
+                  constraints:
+                      nullable: false
+            - column:
+                  name: remark
+                  type: varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+                  remarks: "描述"
+                  constraints:
+                      nullable: true
+            - column:
+                  name: validAt
+                  type: datetime
+                  constraints:
+                      nullable: false
+            - column:
+                  name: expireAt
+                  type: datetime
+            - column:
+                  name: createAt
+                  type: datetime
+                  constraints:
+                      nullable: false
+      - modifySql:
+            append:
+                value: "ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8 COLLATE utf8_general_ci"

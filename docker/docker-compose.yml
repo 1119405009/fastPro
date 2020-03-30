@@ -1,0 +1,26 @@
+version: "2.0"
+services:
+  travel-platform:
+    build: .
+    restart: always
+    environment:
+      REDIS_HOST: "10.8.0.8"
+      REDIS_PORT: "6379"
+      REDIS_PASSWORD: ""
+      REDIS_DATABASE: "14"
+      MYSQL_HOST_AND_PORT: "10.8.0.8"
+      MYSQL_USERNAME: "root"
+      MYSQL_PASSWORD: "root"
+      RABBITMQ_HOST: "10.8.0.8"
+      RABBITMQ_PORT: "5672"
+      RABBITMQ_USERNAME: "guest"
+      RABBITMQ_PASSWORD: "guest"
+      RABBITMQ_VHOST: "/"
+      DEBUG: "true"
+      TRACE: "false"
+      LOGGING_LEVEL_SQL: "ERROR"
+      LOGGING_LEVEL_TYPE: "ERROR"
+    volumes:
+      - /data/develop/travel-platform-api/logs:/root/logs
+    ports:
+    - "531:80"

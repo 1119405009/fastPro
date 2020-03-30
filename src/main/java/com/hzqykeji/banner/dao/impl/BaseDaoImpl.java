@@ -1,0 +1,1 @@
+package com.hzqykeji.banner.dao.impl;/* * @Author felix * @Description * @Date 16:07 */public class BaseDaoImpl {}

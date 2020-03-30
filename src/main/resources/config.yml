@@ -1,0 +1,9 @@
+business:
+  config:
+    storage:
+      alibaba:
+        accessKey: ${STORAGE_ALIBABA_ACCESS_KEY:accessKey}
+        secretKey: ${STORAGE_ALIBABA_SECRET_KEY:secretKey}
+        serverAddr: ${STORAGE_ALIBABA_SERVER_ADDR:serverAddr}
+        bucket: ${STORAGE_ALIBABA_BUCKET:bucket}
+        domain: ${STORAGE_ALIBABA_DOMAIN:domain}
